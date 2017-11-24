@@ -16,24 +16,18 @@ public class CoffeMachine extends StateMachine {
     }
 
     @Override
-    public void executeTransition(String actiune) {
+    public void Message(String actiune) {
         System.out.println("Creditul initial "+stareCurenta);
 
 
-        if(dictionarTranzitie.get(stareCurenta).get(actiune)!=null)
-        {
-            stareCurenta=dictionarTranzitie.get(stareCurenta).get(actiune);
+
             if(actiune.equals("C10")||actiune.equals("C15"))
             {
                 System.out.println("Cafeaua dvs se prepara "+actiune);
             }
             System.out.println("Creditul dvs este "+stareCurenta);
             System.out.println("Mai introduceti bancnote");
-        }
-        else
-        {
-            System.out.println("Credit insuficient");
-        }
+
 
     }
 

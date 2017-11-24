@@ -8,6 +8,11 @@ public abstract class StateMachine {
     protected  String stareCurenta;
     protected  HashMap<String,HashMap<String,String>> dictionarTranzitie;
 
-    public abstract void executeTransition(String actiune);
+    public  void executeTransition(String actiune){
+        if(dictionarTranzitie.get(stareCurenta).get(actiune)!=null)
+            stareCurenta=dictionarTranzitie.get(stareCurenta).get(actiune);
+            Message(actiune);
+    }
+    public abstract void Message(String actiune);
 
 }
